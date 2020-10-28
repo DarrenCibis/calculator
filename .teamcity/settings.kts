@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.powerShell
 import jetbrains.buildServer.configs.kotlin.v2019_2.projectFeatures.githubConnection
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
@@ -58,4 +59,13 @@ object Build : BuildType({
 object Template_1 : Template({
     id("Template")
     name = "template"
+
+    steps {
+        powerShell {
+            id = "RUNNER_1"
+            scriptMode = script {
+                content = "dir"
+            }
+        }
+    }
 })
