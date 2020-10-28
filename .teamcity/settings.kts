@@ -50,6 +50,14 @@ object Build : BuildType({
         root(DslContext.settingsRoot)
     }
 
+    steps {
+        powerShell {
+            scriptMode = script {
+                content = "dir"
+            }
+        }
+    }
+
     triggers {
         vcs {
         }
