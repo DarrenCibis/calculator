@@ -30,6 +30,8 @@ project {
 
     buildType(Build)
 
+    template(Template_1)
+
     features {
         githubConnection {
             id = "PROJECT_EXT_3"
@@ -51,4 +53,9 @@ object Build : BuildType({
         vcs {
         }
     }
+})
+
+object Template_1 : Template({
+    id("Template")
+    name = "template"
 })
